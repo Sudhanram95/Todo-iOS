@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4F94F82447647900481F6A /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4F94F72447647900481F6A /* SwipeTableViewController.swift */; };
 		4D515122244226BB007B7F66 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D515121244226BB007B7F66 /* CategoryViewController.swift */; };
 		4D6492D524456562000DD1F9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6492D424456562000DD1F9 /* Item.swift */; };
 		4D6492D72445656D000DD1F9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6492D62445656D000DD1F9 /* Category.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4F94F72447647900481F6A /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		4D515121244226BB007B7F66 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		4D6492D424456562000DD1F9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4D6492D62445656D000DD1F9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				EB2BE4FD239524DB00FB933B /* ViewController.swift */,
 				4D515121244226BB007B7F66 /* CategoryViewController.swift */,
+				4D4F94F72447647900481F6A /* SwipeTableViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				4D515122244226BB007B7F66 /* CategoryViewController.swift in Sources */,
 				EB2BE4FE239524DB00FB933B /* ViewController.swift in Sources */,
 				EB2BE4FA239524DB00FB933B /* AppDelegate.swift in Sources */,
+				4D4F94F82447647900481F6A /* SwipeTableViewController.swift in Sources */,
 				4D6492D72445656D000DD1F9 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

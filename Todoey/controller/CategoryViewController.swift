@@ -8,8 +8,10 @@
 
 import UIKit
 import RealmSwift
+import SwipeCellKit
+import ChameleonFramework
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
@@ -17,6 +19,8 @@ class CategoryViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 80.0
         
         loadCatgeory()
     }
@@ -28,8 +32,9 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = categories?[indexPath.row].name ?? "Add a new category"
+        cell.backgroundColor = UIColor(hexString: categories?[indexPath.row].background ?? "#FFFFFF")
         return cell
     }
     
@@ -64,6 +69,18 @@ class CategoryViewController: UITableViewController {
         categories = realm.objects(Category.self)
         tableView.reloadData()
     }
+    
+    override func performDelete(at indexPath: IndexPath) {
+        if let category = categories?[indexPath.row] {
+            do {
+                try realm.write {
+                    realm.delete(category)
+                }
+            } catch {
+                print("Error while deleting \(error)")
+            }
+        }
+    }
 
     @IBAction func onAddCategoryPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -73,6 +90,7 @@ class CategoryViewController: UITableViewController {
                     if let title = textField.text {
                         let newCategory = Category()
                         newCategory.name = title
+                        newCategory.background = UIColor.randomFlat().hexValue()
                         self.save(category: newCategory)
                     }
                 }
